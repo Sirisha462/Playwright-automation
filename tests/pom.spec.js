@@ -11,10 +11,8 @@ test('Swaglabs Login', async ({ page }) => {
     await login.enterUsername('standard_user');
     await login.enterPassword('secret_sauce');
     await login.login();
+    await homePage.ValidatingHomePage();
 
-
-
-    // await expect(page.locator('text=Swag Labs')).toBeVisible();
 
 
 }
