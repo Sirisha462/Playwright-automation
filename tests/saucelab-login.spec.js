@@ -49,7 +49,5 @@ test('only password', async () => {
 test('Without Username and Password', async () => {
     await login.login();
    await login.withOnlyPassword();
-}
-
-)
+})
 });
