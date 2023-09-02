@@ -5,7 +5,6 @@ on:
     inputs:
       input_from_postman:
         description: 'Input from Postman'
-        required: true
 
 jobs:
   run:
