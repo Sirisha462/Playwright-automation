@@ -1,5 +1,5 @@
 const { test, expect } = require('@playwright/test')
-import { LoginPage } from '../pages/login-page'
+import { Login } from '../pages/login-page'
 import { HomePage } from "../pages/home-page"
 let page;
 let login;
@@ -7,7 +7,7 @@ let homePage
 test.describe('login', () => {
     test.beforeEach(async({browser}) => {
         page=await browser.newPage();
-         login = new LoginPage(page);
+         login = new Login(page);
          homePage = new HomePage(page);
         await login.goToLoginPage();
 
