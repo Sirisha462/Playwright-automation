@@ -1,12 +1,15 @@
 const { expect } = require("@playwright/test");
 
-exports.LoginPage=class LoginPage{
+exports.Login=class Login{
 
 constructor(page){
     this.page = page;
     this.username_textbox=page.locator('id=user-name');
     this.password_textbox=page.locator('id=password');
     this.loginButton=page.locator('id=login-button');
+    this.links= page.locator('a');
+    this.buttons= page.locator('button');
+    this.images=page.locator("img");
 }
 
  async goToLoginPage(){
@@ -43,6 +46,21 @@ async withOnlyPassword(){
     const usernameRequiredText="Epic sadface: Username is required";
     await expect(this.page.getByText(usernameRequiredText)).toBeVisible();
 }
+async numberOfVisibleLinks(){
+    const linkcount = await this.links.count();
+    console.log('total number of visible links ' + linkcount);
+    return linkcount;
+ }
 
+ async numberOfVisibleButtons(){
+    const buttoncount = await this.buttons.count();
+    console.log('total number of visible buttons ' + buttoncount);
+    return buttoncount;
+ }
 
+ async numberOfVisibleImages(){
+  const numberofimages= await this.images.count();
+  console.log("Number of visible images: " + numberofimages);
+  return numberofimages;
+ }
 }
