@@ -11,7 +11,7 @@ app.post('/', async function (req, res) {
    for (var i = 0; i < script_name.length; i++) {
       for (var j = 0; j < browser.length; j++) {
          process.env.BROWSER = browser[j];
-         exec(`npx playwright test ${script_name[i]} --project ${browser[j]}`, (error, stdout, stderr) => {
+         exec(`npx playwright test ${script_name[i]} --project ${browser[j]} --headed`, (error, stdout, stderr) => {
             if (error) {
                console.error(`exec error: ${error}`);
                return;

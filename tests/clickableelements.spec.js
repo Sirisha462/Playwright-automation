@@ -38,7 +38,7 @@ test.describe('checking element in an application', () => {
         await app.clickingButtons(buttoncount);
     })
 
-    test.only('checking images are loaded or broken', async () => {
+    test('checking images are loaded or broken', async () => {
         const imagecount = await app.numberOfVisibleImages();
         await app.scrollingDown(imagecount);
         await app.checkingImage(imagecount);

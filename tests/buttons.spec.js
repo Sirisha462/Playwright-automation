@@ -8,6 +8,7 @@ test('clicking buttons', async () => {
     browser = await webkit.launch();
   if (process.env.BROWSER == 'firefox')
     browser = await firefox.launch();
+  
   const context = await browser.newContext();
   const page = await context.newPage();
   await page.goto(process.env.BASEURL);
