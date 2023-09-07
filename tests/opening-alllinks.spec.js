@@ -1,5 +1,4 @@
 const { test, expect, chromium } = require('@playwright/test')
- const prompt=require('prompt-sync')();
 
 
 test('Opening all links and taking screenshot', async () => {
