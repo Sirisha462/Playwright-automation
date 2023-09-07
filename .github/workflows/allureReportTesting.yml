@@ -1,4 +1,4 @@
-name: Workflow-Dispatch 
+name: allure-report testing
 on:
  
     workflow_dispatch:
@@ -32,6 +32,12 @@ jobs:
         name: playwright-report
         path: playwright-report/
         retention-days: 30
+    - name: Install Allure Command Line
+      run: |
+          wget https://github.com/allure-framework/allure2/releases/download/2.14.0/allure-2.14.0.zip -O allure.zip
+          unzip allure.zip
+          export PATH="$PATH:$(pwd)/allure-2.14.0/bin"
+      shell: bash
     - name: Generating allure reports
       run: allure generate my-allure-results --clean -o allure-report
       shell: bash
