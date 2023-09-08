@@ -1,5 +1,4 @@
 const { test, expect, chromium,firefox,webkit } = require('@playwright/test');
-const { get } = require('prompt');
 
 test('checking images', async () => {
   var flag='';
