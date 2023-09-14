@@ -1,4 +1,4 @@
-exports.HomePage=class HomePage{
+exports.HomePage = class HomePage {
 
     constructor(page) {
         this.page = page;
