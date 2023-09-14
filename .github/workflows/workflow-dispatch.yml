@@ -31,9 +31,10 @@ jobs:
       with:
         name: playwright-report
         path: playwright-report/
+        env-url: FOOBAR
         retention-days: 30
     - name: Send Artifact URL to Zapier
       run: |
-          ARTIFACT_URL="https://github.com/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID/artifacts/playwright-report"
-          ZAPIER_WEBHOOK_URL=""https://hooks.zapier.com/hooks/catch/16498003/3r8auzt/
+          ARTIFACT_URL="${{ env.FOOBAR }}"
+          ZAPIER_WEBHOOK_URL="https://hooks.zapier.com/hooks/catch/16498003/3r8auzt/"
           curl -X POST -d "artifact_url=$ARTIFACT_URL" $ZAPIER_WEBHOOK_URL
