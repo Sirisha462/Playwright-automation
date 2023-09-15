@@ -1,0 +1,6 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Fri Sep 15 04:04:02 GMT 2023","Fri Sep 15 04:04:03 GMT 2023","484","chromium","","login","","","Without Username and Password",""
+"passed","Fri Sep 15 04:04:01 GMT 2023","Fri Sep 15 04:04:01 GMT 2023","665","chromium","","login","","","Invalid Username and Password",""
+"passed","Fri Sep 15 04:04:02 GMT 2023","Fri Sep 15 04:04:02 GMT 2023","556","chromium","","login","","","only password",""
+"passed","Fri Sep 15 04:03:58 GMT 2023","Fri Sep 15 04:04:01 GMT 2023","3101","chromium","","login","","","Valid Username and Password",""
+"passed","Fri Sep 15 04:04:01 GMT 2023","Fri Sep 15 04:04:02 GMT 2023","554","chromium","","login","","","only username",""
