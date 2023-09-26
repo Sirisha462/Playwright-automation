@@ -72,11 +72,7 @@ jobs:
        PUBLISH_BRANCH: gh-pages
        PUBLISH_DIR: allure-history
 
-    - name: Send Allure Report to zapier
-      run: |
-       AllureReport_Url="https://sirisha462.github.io/Playwright-automation"
-       ZAPIER_WEBHOOK_URL="https://hooks.zapier.com/hooks/catch/16498003/3r8auzt/"
-       curl -X POST -d "allure_url=$AllureReport_Url" $ZAPIER_WEBHOOK_URL
+  
      
 
     
