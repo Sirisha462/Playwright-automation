@@ -63,9 +63,12 @@ jobs:
           echo "Number of passed test cases: $PASSED"
           echo "Number of failed test cases: $FAILED"
           echo "Number of skipped test cases: $SKIPPED"
-          ::set-output name=passed::$PASSED
-          ::set-output name=failed::$FAILED
-          ::set-output name=skipped::$SKIPPED
+          env:
+           passed:$PASSED
+           failed:$FAILED
+           skipped:$SKIPPED
+       
+     
 
     - name: Deploy report to Github Pages
       if: always()
@@ -80,7 +83,7 @@ jobs:
        AllureReport_Url="https://sirisha462.github.io/Playwright-automation"
        ZAPIER_WEBHOOK_URL="https://hooks.zapier.com/hooks/catch/16498003/3r8auzt/"
        
-        curl -X POST -d "allure_url=$AllureReport_Url&passed=$passed&failed=$failed&skipped=$skipped" $ZAPIER_WEBHOOK_URL
+        curl -X POST -d "allure_url=$AllureReport_Url&passed=${{env.passed}}&failed=${{env.failed}}&skipped=${{env.skipped}}" $ZAPIER_WEBHOOK_URL
 
   
      
