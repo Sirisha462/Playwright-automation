@@ -54,6 +54,15 @@ jobs:
        gh_pages: gh-pages
        allure_report: allure-report
        allure_history: allure-history
+       PASSED: ${{ steps.allure-report.outputs.passed }}
+       FAILED: ${{ steps.allure-report.outputs.failed }}
+       SKIPPED: ${{ steps.allure-report.outputs.skipped }}
+
+    - name: Display test case info
+      run: |
+          echo "Number of passed test cases: ${{ steps.allure-report.outputs.passed }}"
+          echo "Number of failed test cases: ${{ steps.allure-report.outputs.failed }}"
+          echo "Number of skipped test cases: ${{ steps.allure-report.outputs.skipped }}"
 
     - name: Deploy report to Github Pages
       if: always()
