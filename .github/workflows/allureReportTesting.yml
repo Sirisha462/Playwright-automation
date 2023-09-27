@@ -63,13 +63,10 @@ jobs:
           echo "Number of passed test cases: $PASSED"
           echo "Number of failed test cases: $FAILED"
           echo "Number of skipped test cases: $SKIPPED"
-          env:
-           passed:$PASSED
-           failed:$FAILED
-           skipped:$SKIPPED
-       
-     
-
+          echo "passed=$PASSED" >> "$GITHUB_ENV"
+          echo "failed=$FAILED" >> "$GITHUB_ENV"
+          echo "skipped=$SKIPPED" >> "$GITHUB_ENV"
+   
     - name: Deploy report to Github Pages
       if: always()
       uses: peaceiris/actions-gh-pages@v2
