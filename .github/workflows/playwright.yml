@@ -48,6 +48,18 @@ jobs:
        allure_report: allure-report
        allure_history: allure-history
 
+    - name: Extract and display test case info
+      run: |
+          export PASSED=$(cat allure-report/widgets/summary.json | jq '.statistic.passed')
+          export FAILED=$(cat allure-report/widgets/summary.json | jq '.statistic.failed')
+          export SKIPPED=$(cat allure-report/widgets/summary.json | jq '.statistic.skipped')
+          echo "Number of passed test cases: $PASSED"
+          echo "Number of failed test cases: $FAILED"
+          echo "Number of skipped test cases: $SKIPPED"
+          echo "passed=$PASSED" >> "$GITHUB_ENV"
+          echo "failed=$FAILED" >> "$GITHUB_ENV"
+          echo "skipped=$SKIPPED" >> "$GITHUB_ENV"
+   
     - name: Deploy report to Github Pages
       if: always()
       uses: peaceiris/actions-gh-pages@v2
@@ -60,4 +72,7 @@ jobs:
       run: |
        AllureReport_Url="https://sirisha462.github.io/Playwright-automation"
        ZAPIER_WEBHOOK_URL="https://hooks.zapier.com/hooks/catch/16498003/3r8auzt/"
-       curl -X POST -d "allure_url=$AllureReport_Url" $ZAPIER_WEBHOOK_URL
+       
+        curl -X POST -d "allure_url=$AllureReport_Url&passed=${{env.passed}}&failed=${{env.failed}}&skipped=${{env.skipped}}" $ZAPIER_WEBHOOK_URL
+  
+
