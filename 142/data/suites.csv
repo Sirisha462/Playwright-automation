@@ -1,0 +1,4 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Mon Nov 13 00:36:30 GMT 2023","Mon Nov 13 00:36:31 GMT 2023","923","chromium","","login","","","validating number of buttons",""
+"passed","Mon Nov 13 00:36:27 GMT 2023","Mon Nov 13 00:36:30 GMT 2023","2736","chromium","","login","","","validating number of links",""
+"passed","Mon Nov 13 00:36:31 GMT 2023","Mon Nov 13 00:36:31 GMT 2023","820","chromium","","login","","","validating number of images",""
