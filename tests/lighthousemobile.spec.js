@@ -1,5 +1,5 @@
-import { playAudit } from 'playwright-lighthouse'
-import { test } from '@playwright/test'
+const playAudit = require('playwright-lighthouse')
+const test= requrire('@playwright/test')
 test('Page speed in mobile device', async ({ playwright }) => {
   const browser = await playwright.chromium.launch({
     args: ['--remote-debugging-port=9222'],
